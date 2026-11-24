@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Roster Gaps</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: sticky control bar over a two-pane scouting board (ranked schools | depth chart), league matrix below. */
+:root{
+  --bg:#f2f4ef; --surface:#fbfcf9; --ink:#15221a; --muted:#5d6c62; --line:#d9ded4;
+  --accent:#1d6b44; --accent-ink:#ffffff; --accent-soft:#dcebe1;
+  --need:#b4410f; --need-soft:#f6dfd2; --thin:#946a00; --thin-soft:#f4e8c2; --ok:#2c7a4d; --ok-soft:#dcebe1;
+  --gone:#9aa59d;
+  --f-display:'Barlow Condensed','Arial Narrow',sans-serif; --f-body:'Inter',system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1812; --surface:#15231b; --ink:#e5eee7; --muted:#97a89c; --line:#27382d;
+  --accent:#5cc28b; --accent-ink:#0b1a11; --accent-soft:#1d3a2a;
+  --need:#ff9a63; --need-soft:#3d2214; --thin:#e7c35a; --thin-soft:#362c0d; --ok:#6fd199; --ok-soft:#1d3a2a;
+  --gone:#5b6b60; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1812; --surface:#15231b; --ink:#e5eee7; --muted:#97a89c; --line:#27382d;
+  --accent:#5cc28b; --accent-ink:#0b1a11; --accent-soft:#1d3a2a;
+  --need:#ff9a63; --need-soft:#3d2214; --thin:#e7c35a; --thin-soft:#362c0d; --ok:#6fd199; --ok-soft:#1d3a2a;
+  --gone:#5b6b60; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:14px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;margin:0;letter-spacing:.01em;text-wrap:balance}
+h1{font-size:34px;line-height:1}
+h2{font-size:22px}
+h3{font-size:18px}
+.sub{color:var(--muted);margin:6px 0 0;max-width:65ch}
+.label{font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.ctl{display:flex;flex-direction:column;gap:5px;min-width:0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;background:none;padding:7px 13px;font-weight:500;border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.sel{font:inherit;padding:7px 9px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);min-width:0;max-width:100%}
+.more{display:block;width:100%;border:0;border-top:1px solid var(--line);background:none;padding:11px;color:var(--accent);font-weight:600}
+.badge{font-size:11px;color:var(--muted)}
+.chk{display:flex;gap:7px;align-items:center;padding-bottom:7px}
+.summary{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:baseline}
+.summary b{font-family:var(--f-display);font-size:26px;font-weight:700;font-variant-numeric:tabular-nums}
+.summary span{color:var(--muted)}
+.board{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:20px;align-items:start}
+@media (max-width:860px){.board{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.panel>header{padding:14px 16px 10px;display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.row{display:grid;grid-template-columns:34px minmax(0,1fr) auto;align-items:center;border-top:1px solid var(--line)}
+.row.sel{background:var(--accent-soft)}
+.star{border:0;background:none;font-size:18px;line-height:1;padding:12px 0;color:var(--muted)}
+.star[aria-pressed="true"]{color:var(--thin)}
+.pick{border:0;background:none;text-align:left;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:center;padding:10px 14px 10px 0;width:100%}
+.pick .nm{font-weight:600;grid-column:1}
+.pick .meta{color:var(--muted);font-size:12px;grid-column:1}
+.slots{display:flex;gap:3px;flex-wrap:wrap;grid-row:1/3;grid-column:2;justify-content:flex-end;max-width:150px}
+.slot{width:13px;height:18px;border-radius:2px;background:var(--accent)}
+.slot.empty{background:transparent;border:1.5px dashed var(--need)}
+.pill{font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;letter-spacing:.03em;white-space:nowrap}
+.pill.need{background:var(--need-soft);color:var(--need)}
+.pill.thin{background:var(--thin-soft);color:var(--thin)}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.trend{display:flex;gap:10px;flex-wrap:wrap;padding:0 16px 12px}
+.trend div{border:1px solid var(--line);border-radius:6px;padding:6px 12px;min-width:92px}
+.trend div.on{border-color:var(--accent);background:var(--accent-soft)}
+.trend b{display:block;font-family:var(--f-display);font-size:24px;line-height:1.1;font-variant-numeric:tabular-nums}
+.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border-top:1px solid var(--line)}
+@media (max-width:520px){.cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.col{background:var(--surface);padding:10px 12px;min-height:96px;display:flex;flex-direction:column;gap:6px}
+.col h4{margin:0;font-size:12px;font-weight:600;display:flex;justify-content:space-between;gap:6px}
+.col h4 small{color:var(--muted);font-weight:500}
+.pl{display:flex;gap:6px;align-items:baseline;line-height:1.3}
+.pl i{font-style:normal;color:var(--muted);font-size:11px;min-width:20px;font-variant-numeric:tabular-nums}
+.pl.gone{color:var(--gone);text-decoration:line-through;text-decoration-thickness:1px}
+.pl .tag{font-size:10px;color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:0 4px}
+.pl .lo{color:var(--thin);font-size:11px}
+.slot.commit{background:repeating-linear-gradient(45deg,var(--accent) 0 3px,transparent 3px 6px);border:1.5px solid var(--accent)}
+.dc{padding:12px 16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:5px}
+form.cf{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;padding:0 16px 14px}
+form.cf label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);min-width:0}
+form.cf input,form.cf select{font:inherit;padding:7px 9px;border:1px solid var(--line);border-radius:5px;background:var(--bg);color:var(--ink);min-width:0}
+.go{border:0;background:var(--accent);color:var(--accent-ink);padding:8px 16px;border-radius:6px;font-weight:600}
+.cl{display:flex;flex-direction:column}
+.cl div{display:flex;gap:10px;align-items:center;border-top:1px solid var(--line);padding:8px 16px;flex-wrap:wrap}
+.cl .x{margin-left:auto;border:0;background:none;color:var(--muted);text-decoration:underline}
+.none{color:var(--muted);font-size:12px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:480px;font-variant-numeric:tabular-nums}
+th,td{padding:8px 12px;text-align:center;border-top:1px solid var(--line)}
+th{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td:first-child,th:first-child{text-align:left}
+td.cell{padding:4px}
+td.cell button{width:100%;border:0;border-radius:4px;padding:6px 0;font-weight:600;background:var(--ok-soft);color:var(--ok)}
+td.cell button.thin{background:var(--thin-soft);color:var(--thin)}
+td.cell button.need{background:var(--need-soft);color:var(--need)}
+td.cell button.cur{outline:2px solid var(--ink);outline-offset:-2px}
+details{border:1px solid var(--line);border-radius:6px;background:var(--surface);padding:6px 12px}
+summary{cursor:pointer;font-weight:500}
+.targets{display:flex;gap:14px;flex-wrap:wrap;padding:10px 0 6px}
+.targets label{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted)}
+.targets input{width:68px;padding:5px 7px;font:inherit;border:1px solid var(--line);border-radius:5px;background:var(--bg);color:var(--ink)}
+.notes{color:var(--muted);font-size:12.5px;max-width:80ch}
+.notes ul{margin:6px 0 0;padding-left:18px}
+.empty{padding:20px 16px;color:var(--muted);border-top:1px solid var(--line)}
+@media (prefers-reduced-motion:no-preference){.row,.pill{transition:background .15s}}
+</style>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}[hidden]{display:none!important}</style>
+</head><body>
+
+<div class="wrap">
+  <div>
+    <h1>Roster Gaps</h1>
+    <p class="sub" id="sub">Women's soccer, NCAA Division II. Loading rosters…</p>
+  </div>
+
+  <div class="bar" role="group" aria-label="Filters">
+    <div class="ctl"><span class="label">Position</span>
+      <div class="seg" id="posSeg"></div></div>
+    <div class="ctl"><span class="label">Season</span>
+      <div class="seg" id="yearSeg"></div></div>
+    <div class="ctl"><label class="label" for="conf">Conference</label><select id="conf" class="sel"></select></div>
+    <div class="ctl"><label class="label" for="q">School</label><input id="q" class="sel" type="search" placeholder="Search schools" autocomplete="off"></div>
+    <label class="chk"><input type="checkbox" id="watchOnly"> Watchlist only</label>
+  </div>
+
+  <div class="summary" id="summary" aria-live="polite"></div>
+
+  <div class="board">
+    <section class="panel" aria-labelledby="rankH">
+      <header><h2 id="rankH">Schools by need</h2><span class="label" id="rankSub"></span></header>
+      <div id="rank"></div>
+    </section>
+    <section class="panel" aria-labelledby="detH" id="detailPanel">
+      <header><h2 id="detH"></h2><span id="detPill"></span><span class="badge" id="detSrc" style="flex-basis:100%"></span></header>
+      <div class="trend" id="trend"></div>
+      <div class="cols" id="cols"></div>
+      <div class="dc" id="detCommits"></div>
+    </section>
+  </div>
+
+  <section class="panel">
+    <header><h2>Every position, every school</h2><span class="label" id="matSub"></span></header>
+    <div class="tbl"><table id="matrix"></table></div>
+  </section>
+
+  <section class="panel">
+    <header><h2>Commitments</h2><span class="label">Counted toward the gap from their first season</span></header>
+    <form class="cf" id="cform">
+      <label for="c-school">School<select id="c-school"></select></label>
+      <label for="c-pos">Position<select id="c-pos"></select></label>
+      <label for="c-arrive">First season<select id="c-arrive"></select></label>
+      <label for="c-name">Recruit<input id="c-name" type="text" placeholder="Name" autocomplete="off"></label>
+      <button class="go" type="submit">Add commitment</button>
+    </form>
+    <div class="cl" id="clist"></div>
+  </section>
+
+  <details>
+    <summary>Depth targets used for “gap”</summary>
+    <div class="targets" id="targets"></div>
+    <div class="notes">Players each position should have on the roster. These are working assumptions, so change them to match how you scout.</div>
+  </details>
+
+  <div class="notes">
+    <b>How to read this</b>
+    <ul>
+      <li>A player counts as returning if she will still have eligibility in the chosen season. Eligibility is estimated from class year (four seasons), with redshirts counted by seasons used.</li>
+      <li>Gap is the depth target minus returning players at that position, minus any commitments you add below. Recruits you haven’t entered aren’t counted, and transfers aren’t modeled.</li>
+      <li>Grad students and 5th-years (marked “?”) are assumed to be out of eligibility. Check these individually.</li>
+      <li>Positions come from school sites as D, M, F and GK only. Players listed at two positions count at the first one; the second shows as a tag and in the “also plays” count.</li>
+      <li>Rosters refresh from each school’s official site every week. Schools marked “Entered by hand” block automated requests, so their rosters are updated manually. Schools not yet loaded are filled in as the weekly refresh reaches them.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+let P=[],SCHOOLS=[],META={},YEARS=[],LAST={},SEASON=2026,BUILT='';
+const POS = [['GK','Goalkeeper'],['DEF','Defense'],['MID','Midfield'],['FWD','Forward']];
+const COLNAME = {1:'Freshman',2:'Sophomore',3:'Junior',4:'Senior / Grad'};
+
+let st = {pos:'DEF', year:2027, school:null, conf:'All', q:'', limit:25, matLimit:25, watchOnly:false, watch:new Set(), targets:{GK:2,DEF:7,MID:7,FWD:5}};
+function loadLocal(){
+try{ const w=JSON.parse(localStorage.getItem('rg-watch')||'[]'); if(Array.isArray(w)) st.watch=new Set(w.filter(s=>SCHOOLS.includes(s))); }catch(e){}
+try{ const t=JSON.parse(localStorage.getItem('rg-targets')||'null'); if(t&&['GK','DEF','MID','FWD'].every(k=>Number.isInteger(t[k])&&t[k]>=0&&t[k]<=30)) st.targets=t; }catch(e){}
+st.commits=[];
+try{ const c=JSON.parse(localStorage.getItem('rg-commits')||'[]'); if(Array.isArray(c)) st.commits=c.filter(x=>x&&SCHOOLS.includes(x.school)&&['GK','DEF','MID','FWD'].includes(x.pos)&&YEARS.includes(x.arrive)); }catch(e){}
+}
+function save(){ try{ localStorage.setItem('rg-commits',JSON.stringify(st.commits)); }catch(e){} try{ localStorage.setItem('rg-watch',JSON.stringify([...st.watch])); localStorage.setItem('rg-targets',JSON.stringify(st.targets)); }catch(e){} }
+
+const esc = s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const h = y=>y-SEASON;
+const returns = (p,y)=>p.used+h(y)<=4;
+function stats(school,pos,y){
+  const mine=P.filter(p=>p.school===school);
+  const ret=mine.filter(p=>p.pos===pos&&returns(p,y)).length;
+  const also=mine.filter(p=>p.pos2===pos&&p.pos!==pos&&returns(p,y)).length;
+  const com=st.commits.filter(c=>c.school===school&&c.pos===pos&&c.arrive<=y).length;
+  const gap=Math.max(0,st.targets[pos]-ret-com);
+  return {ret,com,also,gap,total:mine.filter(p=>p.pos===pos).length};
+}
+const sev = g=>g>=3?'need':g>=1?'thin':'ok';
+const sevText = g=>g>=3?'Needs '+g:g>=1?'Thin by '+g:'Stocked';
+
+function visible(){
+  const q=st.q.trim().toLowerCase();
+  return SCHOOLS.filter(s=>(st.conf==='All'||META[s].conf===st.conf)&&(!q||s.toLowerCase().includes(q)));
+}
+function ranked(){
+  let list=visible().map(s=>({school:s,...stats(s,st.pos,st.year)}));
+  if(st.watchOnly) list=list.filter(r=>st.watch.has(r.school));
+  list.sort((a,b)=>b.gap-a.gap||(a.ret+a.com)-(b.ret+b.com)||a.school.localeCompare(b.school));
+  return list;
+}
+const posName = k=>POS.find(p=>p[0]===k)[1];
+
+function seg(el,items,cur,onPick){
+  el.innerHTML=items.map(([v,t])=>`<button type="button" data-v="${v}" aria-pressed="${v==cur}">${t}</button>`).join('');
+  el.onclick=e=>{const b=e.target.closest('button'); if(b) onPick(b.dataset.v);};
+}
+
+function render(){
+  seg(document.getElementById('posSeg'),POS.map(([k,n])=>[k,n]),st.pos,v=>{st.pos=v;render();});
+  seg(document.getElementById('yearSeg'),YEARS.map(y=>[y,y]),st.year,v=>{st.year=+v;render();});
+  const rk=ranked();
+  if(!st.school||!SCHOOLS.includes(st.school)) st.school=(rk[0]||{}).school||SCHOOLS[0];
+
+  const all=visible().map(s=>stats(s,st.pos,st.year));
+  const totalGap=all.reduce((a,b)=>a+b.gap,0), n=all.filter(x=>x.gap>0).length;
+  document.getElementById('summary').innerHTML=
+    `<span><b>${totalGap}</b> ${posName(st.pos).toLowerCase()} spots open in ${st.year}</span><span><b>${n}</b> of ${all.length} schools short</span>`;
+  document.getElementById('rankSub').textContent=`${posName(st.pos)} · ${st.year} · target ${st.targets[st.pos]}`;
+
+  const rankEl=document.getElementById('rank');
+  const shown=rk.slice(0,st.limit);
+  rankEl.innerHTML = rk.length? shown.map(r=>{
+    const tg=Math.min(st.targets[st.pos],14), filled=Math.min(r.ret,tg), cm=Math.min(r.com,tg-filled), slots=Array.from({length:tg},(_,i)=>`<span class="slot${i<filled?'':i<filled+cm?' commit':' empty'}"></span>`).join('');
+    const w=st.watch.has(r.school);
+    return `<div class="row${r.school===st.school?' sel':''}">
+      <button type="button" class="star" data-star="${esc(r.school)}" aria-pressed="${w}" aria-label="${w?'Remove':'Add'} ${esc(r.school)} ${w?'from':'to'} watchlist">${w?'★':'☆'}</button>
+      <button type="button" class="pick" data-school="${esc(r.school)}">
+        <span class="nm">${esc(r.school)}</span>
+        <span class="meta">${r.ret} returning${r.com?` · ${r.com} committed`:''}${r.also?` · ${r.also} also plays`:''}</span>
+        <span class="slots" aria-hidden="true">${slots}</span>
+        <span class="pill ${sev(r.gap)}" style="grid-column:1;justify-self:start">${sevText(r.gap)}</span>
+      </button></div>`;}).join('')+(rk.length>shown.length?`<button type="button" class="more" id="moreBtn">Show ${Math.min(25,rk.length-shown.length)} more of ${rk.length-shown.length} remaining</button>`:'')
+    : `<div class="empty">${st.watchOnly?'No schools on your watchlist match. Tap a star next to a school to add it.':'No schools match that search.'}</div>`;
+  rankEl.onclick=e=>{
+    if(e.target.closest('#moreBtn')){st.limit+=25; render(); return;}
+    const s=e.target.closest('[data-star]');
+    if(s){const k=s.dataset.star; st.watch.has(k)?st.watch.delete(k):st.watch.add(k); save(); render(); return;}
+    const p=e.target.closest('[data-school]');
+    if(p){st.school=p.dataset.school; render(); if(matchMedia('(max-width:860px)').matches) document.getElementById('detailPanel').scrollIntoView({behavior:'smooth',block:'start'});}
+  };
+
+  detail(); matrix(); targetsUI(); commitsUI();
+}
+
+function detail(){
+  const s=st.school, mine=P.filter(p=>p.school===s&&p.pos===st.pos);
+  const cur=stats(s,st.pos,st.year);
+  const m=META[s]; document.getElementById('detH').textContent=`${s} · ${posName(st.pos)}`;
+  const src=m.status==='manual'?'Entered by hand':m.status==='stale'?'Latest refresh failed, showing older data':'From the school’s roster page';
+  document.getElementById('detSrc').textContent=`${m.conf} · ${src}${m.updated?', '+m.updated:''}`;
+  document.getElementById('detPill').innerHTML=`<span class="pill ${sev(cur.gap)}">${sevText(cur.gap)} in ${st.year}</span>`;
+  document.getElementById('trend').innerHTML=YEARS.map(y=>{const x=stats(s,st.pos,y);
+    return `<div class="${y===st.year?'on':''}"><span class="label">${y}</span><b>${x.ret+x.com}</b><span class="none">${x.ret} back${x.com?' + '+x.com+' new':''} · ${x.gap?'gap '+x.gap:'no gap'}</span></div>`;}).join('');
+  document.getElementById('cols').innerHTML=[4,3,2,1].map(u=>{
+    const ps=mine.filter(p=>Math.min(p.used,4)===u).sort((a,b)=>a.name.localeCompare(b.name));
+    return `<div class="col"><h4>${COLNAME[u]}<small>last ${LAST[u]}</small></h4>`+
+      (ps.length?ps.map(p=>`<div class="pl${returns(p,st.year)?'':' gone'}"><i>${esc(p.jersey)}</i><span>${esc(p.name)}</span>${p.pos2?`<span class="tag">+${p.pos2}</span>`:''}${/^(Gr\.|5th)$/.test(p.cls)?'<span class="lo" title="Eligibility assumed exhausted">?</span>':''}</div>`).join(''):'<span class="none">None</span>')+`</div>`;
+  }).join('');
+  const cs=st.commits.filter(c=>c.school===s&&c.pos===st.pos);
+  document.getElementById('detCommits').innerHTML=cs.length?`<span class="label">Committed</span>`+cs.map(c=>`<div class="pl${c.arrive<=st.year?'':' gone'}"><i>${c.arrive}</i><span>${esc(c.name)}</span></div>`).join(''):'<span class="none">No commitments entered for this position.</span>';
+}
+
+function matrix(){
+  document.getElementById('matSub').textContent=`Open spots in ${st.year}`;
+  const head=`<tr><th>School</th>${POS.map(([k,n])=>`<th>${n}</th>`).join('')}<th>Total</th></tr>`;
+  const rows=visible().map(s=>{
+    let tot=0;
+    const cells=POS.map(([k])=>{const x=stats(s,k,st.year); tot+=x.gap;
+      return `<td class="cell"><button type="button" class="${sev(x.gap)}${s===st.school&&k===st.pos?' cur':''}" data-s="${esc(s)}" data-k="${k}" title="${x.ret} returning of ${st.targets[k]}">${x.gap||'–'}</button></td>`;}).join('');
+    return {tot,html:`<tr><td>${esc(s)}</td>${cells}<td><b>${tot}</b></td></tr>`};
+  }).sort((a,b)=>b.tot-a.tot);
+  const t=document.getElementById('matrix');
+  t.innerHTML=head+rows.slice(0,st.matLimit).map(r=>r.html).join('')+(rows.length>st.matLimit?`<tr><td colspan="6"><button type="button" class="more" id="matMore" style="border:0">Show all ${rows.length} schools</button></td></tr>`:'');
+  t.onclick=e=>{if(e.target.closest('#matMore')){st.matLimit=1e9; render(); return;} const b=e.target.closest('button[data-s]'); if(!b) return; st.school=b.dataset.s; st.pos=b.dataset.k; render();};
+}
+
+function targetsUI(){
+  const el=document.getElementById('targets');
+  if(el.dataset.built) return; el.dataset.built=1;
+  el.innerHTML=POS.map(([k,n])=>`<label for="t-${k}">${n}<input id="t-${k}" type="number" min="0" max="30" value="${st.targets[k]}"></label>`).join('');
+  el.oninput=e=>{const k=e.target.id.slice(2), v=parseInt(e.target.value,10); if(Number.isInteger(v)&&v>=0&&v<=30){st.targets[k]=v; save(); render();}};
+}
+function commitsUI(){
+  const f=document.getElementById('cform');
+  if(!f.dataset.built){ f.dataset.built=1;
+    document.getElementById('c-school').innerHTML=SCHOOLS.map(s=>`<option>${esc(s)}</option>`).join('');
+    document.getElementById('c-pos').innerHTML=POS.map(([k,n])=>`<option value="${k}">${n}</option>`).join('');
+    document.getElementById('c-arrive').innerHTML=YEARS.map(y=>`<option>${y}</option>`).join('');
+    f.onsubmit=e=>{e.preventDefault();
+      const nm=document.getElementById('c-name').value.trim()||'Recruit';
+      st.commits.push({id:Date.now()+Math.random(),school:document.getElementById('c-school').value,pos:document.getElementById('c-pos').value,arrive:+document.getElementById('c-arrive').value,name:nm});
+      document.getElementById('c-name').value=''; save(); render();};
+    document.getElementById('clist').onclick=e=>{const b=e.target.closest('[data-rm]'); if(!b) return; st.commits=st.commits.filter(c=>String(c.id)!==b.dataset.rm); save(); render();};
+  }
+  document.getElementById('clist').innerHTML=st.commits.length?st.commits.map(c=>`<div><b>${esc(c.name)}</b><span>${esc(c.school)}</span><span class="pill ok">${posName(c.pos)}</span><span class="none">${c.arrive} season</span><button type="button" class="x" data-rm="${c.id}" aria-label="Remove ${esc(c.name)}">Remove</button></div>`).join(''):'<div class="none">No commitments yet. Add one and the school’s gap updates above.</div>';
+}
+document.getElementById('conf').onchange=e=>{st.conf=e.target.value; st.limit=25; st.matLimit=25; render();};
+document.getElementById('q').oninput=e=>{st.q=e.target.value; st.limit=25; st.matLimit=25; render();};
+document.getElementById('watchOnly').onchange=e=>{st.watchOnly=e.target.checked; render();};
+function init(D){
+  SEASON=D.season; BUILT=D.built; YEARS=[1,2,3].map(i=>SEASON+i); LAST={4:SEASON,3:SEASON+1,2:SEASON+2,1:SEASON+3};
+  D.schools.forEach(s=>META[s.name]=s);
+  SCHOOLS=D.schools.filter(s=>s.n>0).map(s=>s.name);
+  P=D.players.map(r=>({school:r[0],jersey:r[1],name:r[2],pos:r[3],pos2:r[4],cls:r[5],used:r[6]}));
+  const confs=[...new Set(D.schools.filter(s=>s.n>0).map(s=>s.conf))].sort();
+  document.getElementById('conf').innerHTML=['All',...confs].map(c=>`<option>${esc(c)}</option>`).join('');
+  document.getElementById('sub').textContent=`Women's soccer, NCAA Division II. ${SCHOOLS.length} of ${D.schools.length} programs loaded from ${SEASON} rosters, updated ${BUILT}. Shows where each school will be short in ${YEARS[0]} to ${YEARS[2]}.`;
+  if(!st.year||!YEARS.includes(st.year)) st.year=YEARS[0];
+  loadLocal(); render();
+}
+fetch('data.json').then(r=>r.json()).then(init).catch(()=>{document.getElementById('sub').textContent='Roster data could not be loaded. Refresh the page to try again.';});
+</script>
+</body></html>

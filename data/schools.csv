@@ -1,0 +1,256 @@
+school,conference,state,roster_url,source,manual_season,manual_date,notes
+Grand Valley State,GLIAC,MI,https://gvsulakers.com/sports/womens-soccer/roster,auto,,,
+Saginaw Valley State,GLIAC,MI,https://svsucardinals.com/sports/womens-soccer/roster,auto,,,
+Ferris State,GLIAC,MI,https://ferrisstatebulldogs.com/sports/womens-soccer/roster,manual,2026,2026-11-22,site blocks bots; entered by hand
+Wisconsin-Parkside,GLIAC,WI,https://parksiderangers.com/sports/womens-soccer/roster,auto,,,
+Northern Michigan,GLIAC,MI,https://nmuwildcats.com/sports/womens-soccer/roster,auto,,,
+Davenport,GLIAC,MI,https://dupanthers.com/sports/womens-soccer/roster,auto,,,
+Wayne State,GLIAC,MI,https://wsuathletics.com/sports/womens-soccer/roster,auto,,,
+Purdue Northwest,GLIAC,IN,https://pnwathletics.com/sports/womens-soccer/roster,auto,,,
+Roosevelt,GLIAC,IL,https://rooseveltlakers.com/sports/womens-soccer/roster,auto,,,
+Michigan Tech,GLIAC,MI,https://michigantechhuskies.com/sports/womens-soccer/roster,auto,,,
+Drury,GLVC,MO,https://drurypanthers.com/sports/womens-soccer/roster,auto,,,
+Illinois Springfield,GLVC,IL,https://uisprairiestars.com/sports/womens-soccer/roster,auto,,,Sidearm; uis.edu hosts some athletics news
+Indianapolis,GLVC,IN,https://athletics.uindy.edu/sports/womens-soccer/roster,auto,,,Announced move to G-MAC effective 2027-28; still GLVC in 2026
+Lewis,GLVC,IL,https://lewisflyers.com/sports/womens-soccer/roster,auto,,,
+Lincoln (MO),GLVC,MO,https://lubluetigers.com/sports/womens-soccer/roster,auto,,,
+Maryville,GLVC,MO,https://maryvillesaints.com/sports/womens-soccer/roster,auto,,,
+McKendree,GLVC,IL,https://mckbearcats.com/sports/womens-soccer/roster,auto,,,
+Missouri S&T,GLVC,MO,https://minerathletics.com/sports/womens-soccer/roster,auto,,,
+Missouri-St. Louis,GLVC,MO,https://umsltritons.com/sports/womens-soccer/roster,auto,,,
+Quincy,GLVC,IL,https://quhawks.com/sports/womens-soccer/roster,auto,,,
+Rockhurst,GLVC,MO,https://rockhursthawks.com/sports/womens-soccer/roster,auto,,,
+Southwest Baptist,GLVC,MO,https://sbubearcats.com/sports/womens-soccer/roster,auto,,,New head coach 2026
+Truman State,GLVC,MO,https://trumanbulldogs.com/sports/womens-soccer/roster,auto,,,
+Upper Iowa,GLVC,IA,https://uiupeacocks.com/sports/womens-soccer/roster,auto,,,
+William Jewell,GLVC,MO,https://jewellcardinals.com/sports/womens-soccer/roster,auto,,,
+Ashland,G-MAC,OH,https://goashlandeagles.com/sports/womens-soccer/roster,auto,,,
+Cedarville,G-MAC,OH,https://yellowjackets.cedarville.edu/sports/womens-soccer/roster,auto,,,Athletics site is a subdomain of school domain; roster path unconfirmed
+Findlay,G-MAC,OH,https://findlayoilers.com/sports/womens-soccer/roster,auto,,,
+Kentucky Wesleyan,G-MAC,KY,https://kwcpanthers.com/sports/womens-soccer/roster,auto,,,
+Lake Erie,G-MAC,OH,https://lakeeriestorm.com/sports/womens-soccer/roster,auto,,,
+Malone,G-MAC,OH,https://malonepioneers.com/sports/womens-soccer/roster,auto,,,
+Northwood,G-MAC,MI,https://gonorthwood.com/sports/womens-soccer/roster,auto,,,
+Ohio Dominican,G-MAC,OH,https://ohiodominicanpanthers.com/sports/womens-soccer/roster,auto,,,
+Thomas More,G-MAC,KY,https://thomasmoresaints.com/sports/womens-soccer/roster,auto,,,
+Tiffin,G-MAC,OH,https://gotiffindragons.com/sports/womens-soccer/roster,auto,,,Older pages on tiffin.prestosports.com
+Ursuline,G-MAC,OH,https://ursulinearrows.com/sports/womens-soccer/roster,auto,,,Membership disputed: G-MAC reportedly expelling after 2026-27; merging with Gannon (Dec 2026); still playing 2026
+Walsh,G-MAC,OH,https://athletics.walsh.edu/sports/womens-soccer/roster,auto,,,
+Charleston (WV),Mountain East,WV,https://ucgoldeneagles.com/sports/womens-soccer/roster,auto,,,
+Concord,Mountain East,WV,https://cumountainlions.com/sports/womens-soccer/roster,auto,,,
+Davis & Elkins,Mountain East,WV,https://senatornation.com/sports/womens-soccer/roster,auto,,,
+Fairmont State,Mountain East,WV,https://fightingfalcons.com/sports/womens-soccer/roster,auto,,,
+Frostburg State,Mountain East,MD,https://frostburgsports.com/sports/womens-soccer/roster,auto,,,
+Glenville State,Mountain East,WV,https://gstatepioneers.com/sports/womens-soccer/roster,auto,,,Wikipedia said no WSOC but MEC 2026 poll and school site show a program
+Point Park,Mountain East,PA,https://pointparksports.com/sports/womens-soccer/roster,auto,,,
+Shawnee State,Mountain East,OH,https://ssubears.com/sports/womens-soccer/roster,auto,,,New MEC member 2026-27 (in 2026 MEC poll)
+West Liberty,Mountain East,WV,https://hilltoppersports.com/sports/womens-soccer/roster,auto,,,
+West Virginia State,Mountain East,WV,https://wvsuyellowjackets.com/sports/womens-soccer/roster,auto,,,
+West Virginia Wesleyan,Mountain East,WV,https://wesleyanbobcats.com/sports/womens-soccer/roster,auto,,,
+Wheeling,Mountain East,WV,https://wucardinals.com/sports/womens-soccer/roster,auto,,,New era / new coach 2026
+Barton,Conference Carolinas,NC,https://bartonbulldogs.com/sports/womens-soccer/roster,auto,,,
+Belmont Abbey,Conference Carolinas,NC,https://abbeyathletics.com/sports/womens-soccer/roster,auto,,,
+Chowan,Conference Carolinas,NC,https://gocuhawks.com/sports/womens-soccer/roster,auto,,,
+Converse,Conference Carolinas,SC,https://govalkyries.com/sports/wsoc/roster,auto,,,Roster URL uses /sports/wsoc/ path as seen
+Emmanuel (GA),Conference Carolinas,GA,https://goeulions.com/sports/womens-soccer/roster,auto,,,
+Erskine,Conference Carolinas,SC,https://erskinesports.com/sports/womens-soccer/roster,auto,,,
+Ferrum,Conference Carolinas,VA,https://ferrumpanthers.com/sports/womens-soccer/roster,auto,,,Full Conference Carolinas member since 2025-26 (first CC WSOC season 2025)
+Francis Marion,Conference Carolinas,SC,https://fmupatriots.com/sports/womens-soccer/roster,auto,,,
+King,Conference Carolinas,TN,https://kingtornado.com/sports/womens-soccer/roster,auto,,,
+Lees-McRae,Conference Carolinas,NC,https://lmcbobcats.com/sports/womens-soccer/roster,auto,,,
+Mount Olive,Conference Carolinas,NC,https://umotrojans.com/sports/womens-soccer/roster,auto,,,
+North Greenville,Conference Carolinas,SC,https://nguathletics.com/sports/womens-soccer/roster,auto,,,
+Shorter,Conference Carolinas,GA,https://goshorterhawks.com/sports/womens-soccer/roster,auto,,,
+Southern Wesleyan,Conference Carolinas,SC,https://swuathletics.com/sports/womens-soccer/roster,auto,,,
+UNC Pembroke,Conference Carolinas,NC,https://uncpbraves.com/sports/womens-soccer/roster,auto,,,Left MEC in 2025; now Conference Carolinas
+Young Harris,Conference Carolinas,GA,https://yhcathletics.com/sports/womens-soccer/roster,auto,,,New head coach 2026
+Bloomsburg,PSAC,PA,https://bloomsburgathletics.com/sports/womens-soccer/roster,auto,,,Commonwealth University-Bloomsburg
+Clarion,PSAC,PA,https://clariongoldeneagles.com/sports/womens-soccer/roster,auto,,,Penn West Clarion
+California (PA),PSAC,PA,https://calvulcans.com/sports/womens-soccer/roster,auto,,,Penn West California
+Edinboro,PSAC,PA,https://gofightingscots.com/sports/womens-soccer/roster,auto,,,Penn West Edinboro
+East Stroudsburg,PSAC,PA,https://esuwarriors.com/sports/womens-soccer/roster,auto,,,
+Gannon,PSAC,PA,https://gannonsports.com/sports/womens-soccer/roster,auto,,,
+IUP,PSAC,PA,https://iupathletics.com/sports/womens-soccer/roster,auto,,,Indiana University of Pennsylvania
+Kutztown,PSAC,PA,https://kubears.com/sports/womens-soccer/roster,auto,,,
+Lock Haven,PSAC,PA,https://lockhavenathletics.com/sports/womens-soccer/roster,auto,,,Commonwealth University-Lock Haven
+Mansfield,PSAC,PA,https://gomounties.com/sports/womens-soccer/roster,auto,,,Commonwealth University-Mansfield
+Millersville,PSAC,PA,https://millersvilleathletics.com/sports/womens-soccer/roster,auto,,,
+Pitt-Johnstown,PSAC,PA,https://pittjohnstownathletics.com/sports/womens-soccer/roster,auto,,,
+Seton Hill,PSAC,PA,https://athletics.setonhill.edu/sports/womens-soccer/roster,auto,,,Subdomain of setonhill.edu
+Shepherd,PSAC,WV,https://shepherdrams.com/sports/womens-soccer/roster,auto,,,
+Shippensburg,PSAC,PA,https://shipraiders.com/sports/womens-soccer/roster,auto,,,
+Slippery Rock,PSAC,PA,https://rockathletics.com/sports/womens-soccer/roster,auto,,,
+West Chester,PSAC,PA,https://wcupagoldenrams.com/sports/womens-soccer/roster,auto,,,
+Adelphi,NE10,NY,https://aupanthers.com/sports/womens-soccer/roster,auto,,,
+American International,NE10,MA,https://aicyellowjackets.com/sports/womens-soccer/roster,auto,,,
+Assumption,NE10,MA,https://assumptiongreyhounds.com/sports/womens-soccer/roster,auto,,,
+Bentley,NE10,MA,https://bentleyfalcons.com/sports/womens-soccer/roster,auto,,,
+Franklin Pierce,NE10,NH,https://fpuravens.com/sports/womens-soccer/roster,auto,,,2025 NCAA DII national runner-up
+Pace,NE10,NY,https://paceuathletics.com/sports/womens-soccer/roster,auto,,,
+Saint Anselm,NE10,NH,https://saintanselmhawks.com/sports/womens-soccer/roster,auto,,,Leaving NE10 for D-III NEWMAC after 2026-27
+Saint Michael's,NE10,VT,https://smcathletics.com/sports/womens-soccer/roster,auto,,,
+Southern Connecticut State,NE10,CT,https://scsuowls.com/sports/womens-soccer/roster,auto,,,
+Southern New Hampshire,NE10,NH,https://snhupenmen.com/sports/womens-soccer/roster,auto,,,
+Bridgeport,CACC,CT,https://ubknights.com/sports/womens-soccer/roster,auto,,,
+Caldwell,CACC,NJ,https://caldwellathletics.com/sports/womens-soccer/roster,auto,,,
+Chestnut Hill,CACC,PA,https://griffinathletics.com/sports/womens-soccer/roster,auto,,,
+Dominican (NY),CACC,NY,https://chargerathletics.com/sports/womens-soccer/roster,auto,,,Site appears Presto-style URLs (/sports/wsoc/2025-26/...); roster path unconfirmed; older domain dominican.prestosports.com
+Felician,CACC,NJ,https://felicianuathletics.com/sports/womens-soccer/roster,auto,,,
+Georgian Court,CACC,NJ,https://gculions.com/sports/womens-soccer/roster,auto,,,
+Goldey-Beacom,CACC,DE,https://gbcathletics.com/sports/womens-soccer/roster,auto,,,
+Holy Family,CACC,PA,https://athletics.holyfamily.edu/sports/womens-soccer/roster,auto,,,Subdomain of holyfamily.edu
+Lincoln (PA),CACC,PA,https://lulions.com/sports/womens-soccer/roster,auto,,,CACC associate member for women's soccer only (since 2024-25); not lubluetigers.com (Lincoln MO)
+Post,CACC,CT,https://posteagles.com/sports/womens-soccer/roster,auto,,,
+Thomas Jefferson,CACC,PA,https://jeffersonrams.com/sports/womens-soccer/roster,auto,,,
+Wilmington (DE),CACC,DE,https://wildcats.athletics.wilmu.edu/sports/womens-soccer/roster,auto,,,"Non-standard subdomain, Presto-style URLs (/sports/wsoc/2025-26/...); roster path unconfirmed"
+Daemen,ECC,NY,https://daemenwildcats.com/sports/womens-soccer/roster,auto,,,
+D'Youville,ECC,NY,https://dyusaints.com/sports/womens-soccer/roster,auto,,,
+Mercy,ECC,NY,https://mercyathletics.com/sports/womens-soccer/roster,auto,,,
+Molloy,ECC,NY,https://molloylions.com/sports/womens-soccer/roster,auto,,,
+Queens (NY),ECC,NY,https://queensknights.com/sports/womens-soccer/roster,auto,,,Queens College CUNY
+Roberts Wesleyan,ECC,NY,https://robertsredhawks.com/sports/womens-soccer/roster,auto,,,
+St. Thomas Aquinas,ECC,NY,https://stacathletics.com/sports/womens-soccer/roster,auto,,,Presto-based site (/sports/wsoc/2025-26/...); roster path unconfirmed; older domain stac.prestosports.com
+Staten Island,ECC,NY,https://csidolphins.com/sports/womens-soccer/roster,auto,,,College of Staten Island
+Catawba,SAC,NC,https://catawbaathletics.com/sports/womens-soccer/roster,auto,,,
+Lenoir-Rhyne,SAC,NC,https://lrbears.com/sports/womens-soccer/roster,auto,,,
+Anderson,SAC,SC,https://autrojans.com/sports/womens-soccer/roster,auto,,,
+Wingate,SAC,NC,https://wingatebulldogs.com/sports/womens-soccer/roster,auto,,,
+Coker,SAC,SC,https://cokercobras.com/sports/womens-soccer/roster,auto,,,Presto-style URLs seen (/sports/msoc/2025-26/teams); roster path may differ
+Carson-Newman,SAC,TN,https://cneagles.com/sports/womens-soccer/roster,auto,,,Women's soccer sport slug is w-soccer (seen /sports/w-soccer/...); roster path may differ
+Lincoln Memorial,SAC,TN,https://lmurailsplitters.com/sports/womens-soccer/roster,auto,,,
+Tusculum,SAC,TN,https://tusculumpioneers.com/sports/womens-soccer/roster,auto,,,Women's soccer slug wsoc (Presto-style); roster path may differ
+Newberry,SAC,SC,https://newberrywolves.com/sports/womens-soccer/roster,auto,,,Roster URL seen in search: /sports/womens-soccer/roster
+Emory & Henry,SAC,VA,https://gowasps.com/sports/womens-soccer/roster,auto,,,Slug wsoc (Presto-style); roster path may differ; older site emoryhenry.prestosports.com
+Mars Hill,SAC,NC,https://lionsports.net/sports/womens-soccer/roster,auto,,,Two domains seen: lionsports.net (2026 news) and marshilllions.com (2025 news); confirm current
+Columbus State,Peach Belt,GA,https://csucougars.com/sports/womens-soccer/roster,auto,,,
+North Georgia,Peach Belt,GA,https://ungathletics.com/sports/womens-soccer/roster,auto,,,
+Flagler,Peach Belt,FL,https://flaglerathletics.com/sports/womens-soccer/roster,auto,,,Joins Sunshine State Conference 2027-28; in PBC for 2026 season
+Georgia College,Peach Belt,GA,https://gcsubobcats.com/sports/womens-soccer/roster,auto,,,
+Clayton State,Peach Belt,GA,https://claytonstatesports.com/sports/womens-soccer/roster,auto,,,
+Lander,Peach Belt,SC,https://landerbearcats.com/sports/womens-soccer/roster,auto,,,
+USC Aiken,Peach Belt,SC,https://pacersports.com/sports/womens-soccer/roster,auto,,,
+USC Beaufort,Peach Belt,SC,https://uscbathletics.com/sports/womens-soccer/roster,auto,,,Older domain uscbsandsharks.com seen in a stats PDF path
+Georgia Southwestern,Peach Belt,GA,https://gswcanes.com/sports/womens-soccer/roster,auto,,,Presto site also seen at gsw.prestosports.com
+Middle Georgia,Peach Belt,GA,https://mgaknights.com/sports/womens-soccer/roster,auto,,,
+Montevallo,Gulf South,AL,https://montevallofalcons.com/sports/womens-soccer/roster,auto,,,
+Lee,Gulf South,TN,https://leeuflames.com/sports/womens-soccer/roster,auto,,,
+Union,Gulf South,TN,https://uuathletics.com/sports/womens-soccer/roster,auto,,,
+Delta State,Gulf South,MS,https://gostatesmen.com/sports/womens-soccer/roster,auto,,,
+Valdosta State,Gulf South,GA,https://vstateblazers.com/sports/womens-soccer/roster,auto,,,
+UAH,Gulf South,AL,https://uahchargers.com/sports/womens-soccer/roster,auto,,,
+Spring Hill,Gulf South,AL,https://shcbadgers.com/sports/womens-soccer/roster,auto,,,Also SIAC member for other sports; joins GSC all-sports 2027-28
+Trevecca Nazarene,Gulf South,TN,https://tnutrojans.com/sports/womens-soccer/roster,auto,,,
+Mississippi Christian,Gulf South,MS,https://gochoctaws.com/sports/womens-soccer/roster,auto,,,Formerly Mississippi College; renamed
+AUM,Gulf South,AL,https://aumathletics.com/sports/womens-soccer/roster,auto,,,
+West Alabama,Gulf South,AL,https://uwaathletics.com/sports/womens-soccer/roster,auto,,,
+Christian Brothers,Gulf South,TN,https://cbubucs.com/sports/womens-soccer/roster,auto,,,Roster URL seen: /sports/womens-soccer/roster; new head coach 2026
+Florida Tech,Sunshine State,FL,https://floridatechsports.com/sports/womens-soccer/roster,auto,,,
+Nova Southeastern,Sunshine State,FL,https://nsusharks.com/sports/womens-soccer/roster,auto,,,
+Eckerd,Sunshine State,FL,https://eckerdtritons.com/sports/womens-soccer/roster,auto,,,
+Embry-Riddle,Sunshine State,FL,https://erauathletics.com/sports/womens-soccer/roster,auto,,,Daytona Beach campus
+Rollins,Sunshine State,FL,https://rollinssports.com/sports/womens-soccer/roster,auto,,,
+Florida Southern,Sunshine State,FL,https://fscmocs.com/sports/womens-soccer/roster,auto,,,
+Tampa,Sunshine State,FL,https://tampaspartans.com/sports/womens-soccer/roster,auto,,,Presto-style URLs seen; roster path may differ
+Lynn,Sunshine State,FL,https://lynnfightingknights.com/sports/womens-soccer/roster,auto,,,
+Palm Beach Atlantic,Sunshine State,FL,https://pbasailfish.com/sports/womens-soccer/roster,auto,,,
+Barry,Sunshine State,FL,https://gobarrybucs.com/sports/womens-soccer/roster,auto,,,
+Saint Leo,Sunshine State,FL,https://saintleolions.com/sports/womens-soccer/roster,auto,,,
+Dallas Baptist,Lone Star,TX,https://dbupatriots.com/sports/womens-soccer/roster,auto,,,
+Midwestern State,Lone Star,TX,https://msumustangs.com/sports/womens-soccer/roster,auto,,,
+Texas Woman's,Lone Star,TX,https://twuathletics.com/sports/womens-soccer/roster,auto,,,
+UT Dallas,Lone Star,TX,https://utdcomets.com/sports/womens-soccer/roster,auto,,,Completed DII provisional membership 2026
+UT Tyler,Lone Star,TX,https://uttylerpatriots.com/sports/womens-soccer/roster,auto,,,
+St. Mary's (TX),Lone Star,TX,https://rattlerathletics.com/sports/womens-soccer/roster,auto,,,
+Angelo State,Lone Star,TX,https://angelosports.com/sports/womens-soccer/roster,auto,,,
+St. Edward's,Lone Star,TX,https://gohilltoppers.com/sports/womens-soccer/roster,auto,,,
+Lubbock Christian,Lone Star,TX,https://lcuchaps.com/sports/womens-soccer/roster,auto,,,
+West Texas A&M,Lone Star,TX,https://gobuffsgo.com/sports/womens-soccer/roster,auto,,,
+Oklahoma Christian,Lone Star,OK,https://oceagles.com/sports/womens-soccer/roster,auto,,,
+Texas A&M International,Lone Star,TX,https://godustdevils.com/sports/womens-soccer/roster,auto,,,
+UT Permian Basin,Lone Star,TX,https://utpbfalcons.com/sports/womens-soccer/roster,auto,,,
+Sul Ross State,Lone Star,TX,https://srlobos.com/sports/womens-soccer/roster,auto,,,Completed DII provisional membership 2026
+Eastern New Mexico,Lone Star,NM,https://goeasternathletics.com/sports/womens-soccer/roster,auto,,,
+Colorado School of Mines,RMAC,CO,https://minesathletics.com/sports/womens-soccer/roster,auto,,,
+Colorado Mesa,RMAC,CO,https://cmumavericks.com/sports/womens-soccer/roster,auto,,,
+UCCS,RMAC,CO,https://gomountainlions.com/sports/womens-soccer/roster,auto,,,
+Fort Lewis,RMAC,CO,https://goskyhawks.com/sports/womens-soccer/roster,auto,,,
+Regis (CO),RMAC,CO,https://regisrangers.com/sports/womens-soccer/roster,auto,,,
+Westminster (UT),RMAC,UT,https://westminstergriffins.com/sports/womens-soccer/roster,auto,,,
+MSU Denver,RMAC,CO,https://roadrunnersathletics.com/sports/womens-soccer/roster,auto,,,
+Colorado Christian,RMAC,CO,https://ccucougars.com/sports/womens-soccer/roster,auto,,,
+CSU Pueblo,RMAC,CO,https://gothunderwolves.com/sports/womens-soccer/roster,auto,,,
+Western Colorado,RMAC,CO,https://gomountaineers.com/sports/womens-soccer/roster,auto,,,
+Adams State,RMAC,CO,https://asugrizzlies.com/sports/womens-soccer/roster,auto,,,
+Black Hills State,RMAC,SD,https://bhsuathletics.com/sports/womens-soccer/roster,auto,,,
+New Mexico Highlands,RMAC,NM,https://nmhuathletics.com/sports/womens-soccer/roster,auto,,,
+Augustana (SD),NSIC,SD,https://goaugie.com/sports/womens-soccer/roster,auto,,,
+Bemidji State,NSIC,MN,https://bsubeavers.com/sports/womens-soccer/roster,auto,,,
+Concordia-St. Paul,NSIC,MN,https://cspbears.com/sports/womens-soccer/roster,auto,,,
+Jamestown,NSIC,ND,https://jimmiepride.com/sports/womens-soccer/roster,auto,,,Joined NSIC 2025
+Mary,NSIC,ND,https://goumary.com/sports/womens-soccer/roster,auto,,,
+Minnesota State,NSIC,MN,https://msumavericks.com/sports/womens-soccer/roster,auto,,,
+Minnesota State Moorhead,NSIC,MN,https://msumdragons.com/sports/womens-soccer/roster,auto,,,
+Minnesota Crookston,NSIC,MN,https://goldeneaglesports.com/sports/womens-soccer/roster,auto,,,
+Minnesota Duluth,NSIC,MN,https://umdbulldogs.com/sports/womens-soccer/roster,auto,,,
+Minot State,NSIC,ND,https://msubeavers.com/sports/womens-soccer/roster,auto,,,
+Northern State,NSIC,SD,https://nsuwolves.com/sports/womens-soccer/roster,auto,,,
+St. Cloud State,NSIC,MN,https://scsuhuskies.com/sports/womens-soccer/roster,auto,,,
+Sioux Falls,NSIC,SD,https://usfcougars.com/sports/womens-soccer/roster,auto,,,
+Southwest Minnesota State,NSIC,MN,https://smsumustangs.com/sports/womens-soccer/roster,auto,,,
+Wayne State (NE),NSIC,NE,https://wscwildcats.com/sports/womens-soccer/roster,auto,,,
+Winona State,NSIC,MN,https://winonastatewarriors.com/sports/womens-soccer/roster,auto,,,
+Washburn,MIAA,KS,https://wusports.com/sports/womens-soccer/roster,auto,,,
+Pittsburg State,MIAA,KS,https://pittstategorillas.com/sports/womens-soccer/roster,auto,,,
+Central Missouri,MIAA,MO,https://ucmathletics.com/sports/womens-soccer/roster,auto,,,
+Missouri Western,MIAA,MO,https://gogriffons.com/sports/womens-soccer/roster,auto,,,
+Central Oklahoma,MIAA,OK,https://bronchosports.com/sports/womens-soccer/roster,auto,,,
+Northwest Missouri State,MIAA,MO,https://bearcatsports.com/sports/womens-soccer/roster,auto,,,
+Emporia State,MIAA,KS,https://esuhornets.com/sports/womens-soccer/roster,auto,,,
+Northeastern State,MIAA,OK,https://goriverhawksgo.com/sports/womens-soccer/roster,auto,,,
+Nebraska Kearney,MIAA,NE,https://lopers.com/sports/womens-soccer/roster,auto,,,
+Fort Hays State,MIAA,KS,https://fhsuathletics.com/sports/womens-soccer/roster,auto,,,
+Rogers State,MIAA,OK,https://rsuhillcats.com/sports/womens-soccer/roster,auto,,,
+Missouri Southern,MIAA,MO,https://mssulions.com/sports/womens-soccer/roster,auto,,,
+Newman,MIAA,KS,https://newmanjets.com/sports/womens-soccer/roster,auto,,,
+Western Washington,GNAC,WA,https://wwuvikings.com/sports/womens-soccer/roster,auto,,,
+Simon Fraser,GNAC,BC,https://athletics.sfu.ca/sports/womens-soccer/roster,auto,,,"Canadian school (British Columbia); site is athletics.sfu.ca, not Sidearm-branded domain"
+Seattle Pacific,GNAC,WA,https://spufalcons.com/sports/womens-soccer/roster,auto,,,
+Western Oregon,GNAC,OR,https://wouwolves.com/sports/womens-soccer/roster,auto,,,
+Central Washington,GNAC,WA,https://wildcatsports.com/sports/womens-soccer/roster,auto,,,
+Northwest Nazarene,GNAC,ID,https://nnusports.com/sports/womens-soccer/roster,auto,,,
+Montana State Billings,GNAC,MT,https://msubsports.com/sports/womens-soccer/roster,auto,,,
+Saint Martin's,GNAC,WA,https://smusaints.com/sports/womens-soccer/roster,auto,,,
+Point Loma,PacWest,CA,https://plnusealions.com/sports/womens-soccer/roster,auto,,,
+Concordia Irvine,PacWest,CA,https://cuigoldeneagles.com/sports/womens-soccer/roster,auto,,,
+Hawai'i Hilo,PacWest,HI,https://hiloathletics.com/sports/womens-soccer/roster,auto,,,
+Dominican (CA),PacWest,CA,https://dominicanathletics.com/sports/womens-soccer/roster,auto,,,
+Vanguard,PacWest,CA,https://vanguardlions.com/sports/womens-soccer/roster,auto,,,Became DII member Sept 2025 (from NAIA); check postseason eligibility
+Westmont,PacWest,CA,https://athletics.westmont.edu/sports/womens-soccer/roster,auto,,,
+Biola,PacWest,CA,https://athletics.biola.edu/sports/womens-soccer/roster,auto,,,
+Chaminade,PacWest,HI,https://goswords.com/sports/womens-soccer/roster,auto,,,
+Hawai'i Pacific,PacWest,HI,https://hpusharks.com/sports/womens-soccer/roster,auto,,,
+Jessup,PacWest,CA,https://jessupathletics.com/sports/womens-soccer/roster,auto,,,Became DII member Sept 2025 (from NAIA); check postseason eligibility
+Cal Poly Pomona,CCAA,CA,https://broncoathletics.com/sports/womens-soccer/roster,auto,,,
+Cal Poly Humboldt,CCAA,CA,https://humboldtathletics.com/sports/womens-soccer/roster,auto,,,
+Cal State San Bernardino,CCAA,CA,https://csusbathletics.com/sports/womens-soccer/roster,auto,,,
+Stanislaus State,CCAA,CA,https://warriorathletics.com/sports/womens-soccer/roster,auto,,,
+Chico State,CCAA,CA,https://chicowildcats.com/sports/womens-soccer/roster,auto,,,
+Cal State LA,CCAA,CA,https://lagoldeneagles.com/sports/womens-soccer/roster,auto,,,
+Cal State San Marcos,CCAA,CA,https://csusmcougars.com/sports/womens-soccer/roster,auto,,,
+Cal State Monterey Bay,CCAA,CA,https://otterathletics.com/sports/womens-soccer/roster,auto,,,
+Cal State East Bay,CCAA,CA,https://eastbaypioneers.com/sports/womens-soccer/roster,auto,,,
+UC Merced,CCAA,CA,https://ucmercedbobcats.com/sports/womens-soccer/roster,auto,,,Completed DII provisional membership 2026
+Cal State Dominguez Hills,CCAA,CA,https://gotoros.com/sports/womens-soccer/roster,auto,,,
+San Francisco State,CCAA,CA,https://sfstategators.com/sports/womens-soccer/roster,auto,,,
+Fresno Pacific,CCAA,CA,https://fpusunbirds.com/sports/womens-soccer/roster,auto,,,New CCAA member 2026 (from PacWest)
+Menlo,CCAA,CA,https://menloathletics.com/sports/wsoc/roster,auto,,,New CCAA member 2026 (from PacWest); roster URL uses /sports/wsoc/ path
+Harding,Great American,AR,https://hardingsports.com/sports/womens-soccer/roster,auto,,,GAC does sponsor women's soccer (7 teams in 2026)
+Southwestern Oklahoma State,Great American,OK,https://swosuathletics.com/sports/womens-soccer/roster,auto,,,
+Ouachita Baptist,Great American,AR,https://obutigers.com/sports/womens-soccer/roster,auto,,,
+Northwestern Oklahoma State,Great American,OK,https://riderangersride.com/sports/womens-soccer/roster,auto,,,
+Southern Nazarene,Great American,OK,https://snuathletics.com/sports/womens-soccer/roster,auto,,,
+Oklahoma Baptist,Great American,OK,https://obubison.com/sports/womens-soccer/roster,auto,,,
+East Central,Great American,OK,https://ecutigers.com/sports/womens-soccer/roster,auto,,,
+Allen,Independent,SC,https://auyellowjackets.com/sports/womens-soccer/roster,auto,,,DII independent for women's soccer
+Edward Waters,Independent,FL,https://ewutigerpride.com/sports/womens-soccer/roster,auto,,,DII independent for women's soccer
+Tuskegee,Independent,AL,https://goldentigersports.com/sports/womens-soccer/roster,auto,,,First women's soccer season 2026; independent for two seasons (SIAC member in other sports)

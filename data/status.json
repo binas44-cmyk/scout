@@ -1,0 +1,74 @@
+{
+ "davenport": {
+  "count": 32,
+  "fetched": "2026-11-22T00:00:00+00:00",
+  "last_ok": "2026-11-22T00:00:00+00:00",
+  "roster_season": 2026,
+  "status": "ok",
+  "url": ""
+ },
+ "grand-valley-state": {
+  "count": 30,
+  "fetched": "2026-11-22T00:00:00+00:00",
+  "last_ok": "2026-11-22T00:00:00+00:00",
+  "roster_season": 2026,
+  "status": "ok",
+  "url": ""
+ },
+ "michigan-tech": {
+  "count": 30,
+  "fetched": "2026-11-22T00:00:00+00:00",
+  "last_ok": "2026-11-22T00:00:00+00:00",
+  "roster_season": 2026,
+  "status": "ok",
+  "url": ""
+ },
+ "northern-michigan": {
+  "count": 36,
+  "fetched": "2026-11-22T00:00:00+00:00",
+  "last_ok": "2026-11-22T00:00:00+00:00",
+  "roster_season": 2026,
+  "status": "ok",
+  "url": ""
+ },
+ "purdue-northwest": {
+  "count": 29,
+  "fetched": "2026-11-22T00:00:00+00:00",
+  "last_ok": "2026-11-22T00:00:00+00:00",
+  "roster_season": 2026,
+  "status": "ok",
+  "url": ""
+ },
+ "roosevelt": {
+  "count": 29,
+  "fetched": "2026-11-22T00:00:00+00:00",
+  "last_ok": "2026-11-22T00:00:00+00:00",
+  "roster_season": 2026,
+  "status": "ok",
+  "url": ""
+ },
+ "saginaw-valley-state": {
+  "count": 31,
+  "fetched": "2026-11-22T00:00:00+00:00",
+  "last_ok": "2026-11-22T00:00:00+00:00",
+  "roster_season": 2026,
+  "status": "ok",
+  "url": ""
+ },
+ "wayne-state": {
+  "count": 33,
+  "fetched": "2026-11-22T00:00:00+00:00",
+  "last_ok": "2026-11-22T00:00:00+00:00",
+  "roster_season": 2026,
+  "status": "ok",
+  "url": ""
+ },
+ "wisconsin-parkside": {
+  "count": 34,
+  "fetched": "2026-11-22T00:00:00+00:00",
+  "last_ok": "2026-11-22T00:00:00+00:00",
+  "roster_season": 2026,
+  "status": "ok",
+  "url": ""
+ }
+}
